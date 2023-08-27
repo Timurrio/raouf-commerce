@@ -3,6 +3,8 @@ import Navbar from './components/Navbar/Navbar'
 import { Home } from './pages/Home'
 import Footer from './components/Footer/Footer'
 import "./App.scss"
+import Categories from './pages/Categories/Categories'
+import ProductPage from './pages/ProductPage/ProductPage'
 
 const App: React.FC = () => {
   return (
@@ -12,6 +14,8 @@ const App: React.FC = () => {
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/categories/:category" element={<Categories />} />
+            <Route path='/products/:id' element={<ProductPage />} />
           </Routes>
         </div>
         <Footer />
