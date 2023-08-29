@@ -4,6 +4,7 @@ import { Iitem } from "../../types/Iitem"
 import { ItemCategories } from "../../types/EnumCategories"
 import { Link } from "react-router-dom"
 import "./Categories.scss"
+import ProductCard from "../../components/ProductPreview/ProductCard"
 
 const Categories = () => {
     const { category } = useParams()
@@ -31,27 +32,27 @@ const Categories = () => {
 
 
     return (
-        <div className="categories">
-            <h2 className="categories__header">{category?.toUpperCase()}</h2>
-            <div className="categories__buttons">
-                <Link to={"/categories/all"}><button>All</button></Link>
-                <Link to={"/categories/furniture"}><button>Furnitures</button></Link>
-                <Link to={"/categories/electronic"}><button>Electronics</button></Link>
-                <Link to={"/categories/lamp"}><button>Lamps</button></Link>
-                <Link to={"/categories/kitchen"}><button>Kitchen</button></Link>
-                <Link to={"/categories/chair"}><button>Chairs</button></Link>
-                <Link to={"/categories/skin-care"}><button>Skin Care</button></Link>
-            </div>
+        <div className="categories-wrapper">
+            <div className="categories">
+                <h2 className="categories__header">{category?.toUpperCase()}</h2>
+                <div className="categories__buttons">
+                    <Link to={"/categories/all"}><button className="categories__button">All</button></Link>
+                    <Link to={"/categories/furniture"}><button className="categories__button">Furnitures</button></Link>
+                    <Link to={"/categories/electronic"}><button className="categories__button">Electronics</button></Link>
+                    <Link to={"/categories/lamp"}><button className="categories__button">Lamps</button></Link>
+                    <Link to={"/categories/kitchen"}><button className="categories__button">Kitchen</button></Link>
+                    <Link to={"/categories/chair"}><button className="categories__button">Chairs</button></Link>
+                    <Link to={"/categories/skin-care"}><button className="categories__button">Skin Care</button></Link>
+                </div>
+                <div className="categories__productcards">
+                    {
+                        filterItems(category as ItemCategories).map((item) => (
+                            <ProductCard item={item} />
+                        ))
+                    }
+                </div>
 
-            {
-                filterItems(category as ItemCategories).map((item) => (
-                    <div>
-                        <h4>{item.id}</h4>
-                        <p>{item.description}</p>
-                        <img src={item.img} alt={item.description} />
-                    </div>)
-                )
-            }
+            </div>
         </div>
     )
 }
