@@ -5,12 +5,14 @@ import Footer from './components/Footer/Footer'
 import "./App.scss"
 import Categories from './pages/Categories/Categories'
 import ProductPage from './pages/ProductPage/ProductPage'
+import Cart from './components/Cart/Cart'
 
 const App: React.FC = () => {
   return (
     <div className="app">
       <BrowserRouter>
         <Navbar />
+        <Cart />
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
