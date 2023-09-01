@@ -9,7 +9,8 @@ const Cart = () => {
     const dispatch = useDispatch<AppDispatch>()
 
     return (
-        <div className={isActive ? "cart-wrapper " : "cart-wrapper--hidden"} >
+        <div className={`cart-wrapper ${isActive ? "cart-wrapper--opened" : "cart-wrapper--closed"}`} >
+            <div className="cart-background"></div>
             <div className="cart">
                 <p className="cart__header">Your Shopping Cart (1)</p>
                 <p className="cart__close-button" onClick={() => dispatch(toggleIsActive())}>X</p>

@@ -1,24 +1,51 @@
-.cart-wrapper--hidden {
-    display: none;
-}
-
 .cart-wrapper {
-    display: block;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.3);
     z-index: 100;
     position: fixed;
 }
 
+.cart-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.cart-wrapper--closed {
+    animation: 0.3s forwards ease-in-out display-none;
+
+
+    .cart {
+        animation: 0.4s forwards ease-in-out slide-out;
+    }
+
+    .cart-background {
+        animation: 0.4s forwards ease-in-out hide-background;
+    }
+
+
+
+}
+
+.cart-wrapper--opened {
+    display: block;
+
+    .cart {
+        animation: 0.4s forwards ease-in-out slide-in;
+    }
+
+
+}
 
 .cart {
-    float: right;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 120;
     height: 100vh;
     width: 500px;
     background-color: white;
-    animation-name: slide-in;
-    animation-duration: 0.5s;
 }
 
 
@@ -29,5 +56,35 @@
 
     to {
         margin-right: 0;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        margin-right: 0;
+    }
+
+    to {
+        margin-right: -100%;
+    }
+}
+
+@keyframes hide-background {
+    30% {
+        background: none;
+    }
+
+    100% {
+        display: none;
+    }
+}
+
+@keyframes display-none {
+    0% {
+        display: block;
+    }
+
+    100% {
+        display: none;
     }
 }
