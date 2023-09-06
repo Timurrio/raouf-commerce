@@ -22,11 +22,22 @@ const cartSlice = createSlice({
             state.items.push(action.payload)
         },
         removeCartItem: (state, action) => {
-            state.items.filter((item) => item !== action.payload.id)
+            state.items = state.items.filter((item) => item.item.id !== action.payload.id)
+        },
+        changeCartItemQuantity: (state, action) => {
+            if (action.payload.newQuantity >= 1) {
+                state.items = state.items.map((item) => (
+                    item.item.id === action.payload.item.id
+                        ?
+                        { item: { ...item.item }, quantity: action.payload.newQuantity }
+                        :
+                        item
+                ))
+            }
         }
     },
     initialState: initialState
 })
 
-export const { toggleIsActive, addCartItem, removeCartItem } = cartSlice.actions
+export const { toggleIsActive, addCartItem, removeCartItem, changeCartItemQuantity } = cartSlice.actions
 export default cartSlice.reducer

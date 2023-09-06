@@ -2,9 +2,13 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 import "./ProductPage.scss"
 import { items } from "../../data"
+import { useDispatch } from "react-redux"
+import { AppDispatch } from "../../features/store"
+import { addCartItem } from "../../features/cartSlice/cartSlice"
 
 const Product = () => {
     const { id } = useParams()
+    const dispatch = useDispatch<AppDispatch>()
     const [product, setProduct] = useState(items.find(item => item.id === Number(id)))
     const [quantity, setQuantity] = useState(1)
     const [currentImage, setCurrentImage] = useState(product?.img)
@@ -37,7 +41,7 @@ const Product = () => {
                         <div className="product-page__quantity">
                             <p className="product-page__quantity-header">Quantity</p>
                             <div className="product-page__quantity-change">
-                                <button className="product-page__quantity-button" onClick={() => setQuantity(val => val - 1)}>-</button>
+                                <button className="product-page__quantity-button" onClick={() => quantity > 1 ? setQuantity(val => val - 1) : null}>-</button>
                                 <p className="product-page__quantity-counter">{quantity}</p>
                                 <button className="product-page__quantity-button" onClick={() => setQuantity(val => val + 1)}>+</button>
                             </div>
@@ -45,7 +49,7 @@ const Product = () => {
                             <p className="product-page__price">{product?.price * quantity}.00$</p>
                         </div>
                         <div className="product-page__buttons">
-                            <button className="product-page__cart-button">ADD TO CART</button>
+                            <button className="product-page__cart-button" onClick={() => dispatch(addCartItem({ item: product, quantity: quantity }))}>ADD TO CART</button>
                             <button className="product-page__buy-button">BUY NOW</button>
                         </div>
                     </div>
