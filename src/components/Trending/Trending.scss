@@ -1,0 +1,55 @@
+.trending {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 100px 0px;
+}
+
+.trending__header-block {
+    display: flex;
+    align-items: center;
+    padding: 10px 5px 40px 5px;
+}
+
+.trending__header {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.trending__buttons {
+    margin-left: auto;
+}
+
+.trending__button {
+    padding: 7px;
+    font-size: 20px;
+    margin: 5px;
+    background-color: #373737;
+    color: white;
+    cursor: pointer;
+
+    &:hover {
+        background-color: black;
+    }
+}
+
+
+
+.trending__items-list {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 315px;
+    gap: 20px;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.trending__item {
+    height: 100%;
+
+
+    div {
+        width: 250px;
+    }
+}
