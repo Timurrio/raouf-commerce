@@ -1,10 +1,11 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import "./ProductPage.scss"
 import { items } from "../../data"
 import { useDispatch } from "react-redux"
 import { AppDispatch } from "../../features/store"
 import { addCartItem } from "../../features/cartSlice/cartSlice"
+import { Trending } from "../../components/Trending/Trending"
 
 const Product = () => {
     const { id } = useParams()
@@ -12,6 +13,13 @@ const Product = () => {
     const [product, setProduct] = useState(items.find(item => item.id === Number(id)))
     const [quantity, setQuantity] = useState(1)
     const [currentImage, setCurrentImage] = useState(product?.img)
+
+    useEffect(() => {
+        let newProduct = items.find(item => item.id === Number(id))
+        setProduct(newProduct)
+        setQuantity(1)
+        setCurrentImage(newProduct?.img)
+    }, [id])
 
     return (
         <div className="product-page-wrapper">
@@ -69,6 +77,8 @@ const Product = () => {
                         <p className="product-page__specification-info">{product?.size}</p>
                     </div>
                 </div>
+
+                <Trending />
 
             </div>
         </div>
