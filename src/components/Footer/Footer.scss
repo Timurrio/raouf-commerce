@@ -49,17 +49,20 @@
     justify-content: center;
     background-color: black;
     height: 200px;
+    padding: 10px;
 }
 
 .links {
-    margin-top: 25px;
+    margin-top: 40px;
     display: flex;
+    flex-wrap: wrap;
     list-style: none;
 }
 
 .link {
+    display: inline-block;
     color: white;
-    padding: 15px;
+    padding: 10px 15px;
     font-size: 18px;
     transition: 0.2s all;
     height: 20px;
@@ -67,5 +70,21 @@
     &:hover {
         text-decoration: underline;
         cursor: pointer;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .newsletter__form {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            margin: 10px 0px;
+        }
     }
 }
