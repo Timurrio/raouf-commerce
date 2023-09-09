@@ -66,3 +66,34 @@
     text-align: right;
     font-weight: bold;
 }
+
+@media screen and (max-width: 500px) {
+    .cart-item {
+        flex-direction: column;
+        max-width: 350px;
+        height: auto;
+    }
+
+    .cart-item__image {
+        height: 250px;
+        width: 100%;
+    }
+
+    .cart-item__middle-part {
+        width: 100%;
+        align-items: center;
+    }
+
+    .cart-item__change-quantity-block {
+        margin-top: 20px;
+    }
+
+    .cart-item__right-part {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .cart-item__remove-button {
+        margin-left: auto;
+    }
+}

@@ -124,9 +124,18 @@
     font-weight: bold;
 }
 
+@media screen and (max-width: 750px) {
+    .cart {
+        width: 100vw;
+    }
+}
+
+
+
+
 @keyframes slide-in {
     from {
-        margin-right: -100%;
+        margin-right: -200%;
     }
 
     to {
@@ -140,7 +149,7 @@
     }
 
     to {
-        margin-right: -100%;
+        margin-right: -200%;
     }
 }
 
