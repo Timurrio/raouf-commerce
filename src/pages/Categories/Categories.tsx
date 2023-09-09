@@ -44,7 +44,7 @@ const Categories = () => {
                     <Link to={"/categories/chair"}><button className="categories__button">Chairs</button></Link>
                     <Link to={"/categories/skin-care"}><button className="categories__button">Skin Care</button></Link>
                 </div>
-                <div className="categories__productcards">
+                <div className="categories__product-cards">
                     {
                         filterItems(category as ItemCategories).map((item) => (
                             <ProductCard item={item} />

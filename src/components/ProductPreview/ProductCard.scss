@@ -1,4 +1,6 @@
 .product-card {
+    display: flex;
+    flex-direction: column;
     max-width: 300px;
     min-width: 110px;
     width: 100%;
@@ -20,13 +22,13 @@
     color: black;
 }
 
-.product-cart__name {
-    margin-top: 10px;
+.product-card__name {
+    margin: 10px 0px;
     font-size: 20px;
 }
 
 .product-card__price {
-    margin-top: 10px;
+    margin-top: auto;
     font-size: 20px;
 }
 
