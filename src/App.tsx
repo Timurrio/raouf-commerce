@@ -6,6 +6,7 @@ import "./App.scss"
 import Categories from './pages/Categories/Categories'
 import ProductPage from './pages/ProductPage/ProductPage'
 import Cart from './components/Cart/Cart'
+import ScrollToTopWrapper from './components/ScrollToTopWrapper'
 
 
 const App: React.FC = () => {
@@ -14,16 +15,18 @@ const App: React.FC = () => {
   return (
     <div className="app">
       <BrowserRouter>
-        <Navbar />
-        <Cart />
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/categories/:category" element={<Categories />} />
-            <Route path='/products/:id' element={<ProductPage />} />
-          </Routes>
-        </div>
-        <Footer />
+        <ScrollToTopWrapper>
+          <Navbar />
+          <Cart />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/categories/:category" element={<Categories />} />
+              <Route path='/products/:id' element={<ProductPage />} />
+            </Routes>
+          </div>
+          <Footer />
+        </ScrollToTopWrapper>
       </BrowserRouter>
     </div>
   )
