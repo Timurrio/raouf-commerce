@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import { Home } from './pages/Home'
 import Footer from './components/Footer/Footer'
@@ -10,9 +9,6 @@ import Cart from './components/Cart/Cart'
 
 
 const App: React.FC = () => {
-  const [displayNone, setDisplayNone] = useState(true)
-  setTimeout(() => setDisplayNone(false), 500)
-
 
 
   return (
