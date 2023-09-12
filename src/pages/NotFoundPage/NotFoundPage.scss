@@ -1,0 +1,16 @@
+.not-found {
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+}
+
+.not-found__header {
+    font-size: 40px;
+    white-space: nowrap;
+}
+
+@media screen and (max-width: 600px) {
+    .not-found__header {
+        font-size: 20px;
+    }
+}

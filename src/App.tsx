@@ -7,6 +7,7 @@ import Categories from './pages/Categories/Categories'
 import ProductPage from './pages/ProductPage/ProductPage'
 import Cart from './components/Cart/Cart'
 import ScrollToTopWrapper from './components/ScrollToTopWrapper'
+import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
 
 
 const App: React.FC = () => {
@@ -23,6 +24,7 @@ const App: React.FC = () => {
               <Route path="/" element={<Home />} />
               <Route path="/categories/:category" element={<Categories />} />
               <Route path='/products/:id' element={<ProductPage />} />
+              <Route path='*' element={<NotFoundPage />} />
             </Routes>
           </div>
           <Footer />
