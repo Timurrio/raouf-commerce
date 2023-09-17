@@ -10,14 +10,14 @@ const Footer: React.FC = () => {
                     <button>Subscribe</button>
                 </form>
             </div>
-            <div className="footer__links">
-                <ul className="links">
-                    <li className="link">About</li>
-                    <li className="link">Store locator</li>
-                    <li className="link">FAQs</li>
-                    <li className="link">News</li>
-                    <li className="link">Careers</li>
-                    <li className="link">Contact Us</li>
+            <div className="footer__links-block">
+                <ul className="footer__links">
+                    <li className="footer__link">About</li>
+                    <li className="footer__link">Store locator</li>
+                    <li className="footer__link">FAQs</li>
+                    <li className="footer__link">News</li>
+                    <li className="footer__link">Careers</li>
+                    <li className="footer__link">Contact Us</li>
                 </ul>
             </div>
         </footer>

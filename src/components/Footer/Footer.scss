@@ -44,7 +44,7 @@
 }
 
 
-.footer__links {
+.footer__links-block {
     display: flex;
     justify-content: center;
     background-color: black;
@@ -52,14 +52,14 @@
     padding: 10px;
 }
 
-.links {
+.footer__links {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
 }
 
-.link {
+.footer__link {
     display: inline-block;
     color: white;
     padding: 10px 15px;
