@@ -23,7 +23,7 @@ export const Trending = () => {
             <div className="trending__items-list" ref={itemsList}>
                 {
                     items.map((item) => (
-                        <div className="trending__item">
+                        <div key={item.id} className="trending__item">
                             <ProductCard item={item} />
                         </div>
                     ))

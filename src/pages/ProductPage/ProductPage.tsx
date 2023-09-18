@@ -32,7 +32,7 @@ const Product = () => {
                         <div className="product-page__image-carousel">
                             {
                                 [product?.img].concat(product?.otherImgs).map((image) => (
-                                    <img onMouseEnter={() => setCurrentImage(image)} src={image} alt="" />
+                                    <img key={image} onMouseEnter={() => setCurrentImage(image)} src={image} alt="" />
                                 ))
                             }
                         </div>

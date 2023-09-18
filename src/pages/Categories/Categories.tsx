@@ -47,7 +47,7 @@ const Categories = () => {
                 <div className="categories__product-cards">
                     {
                         filterItems(category as ItemCategories).map((item) => (
-                            <ProductCard item={item} />
+                            <ProductCard key={item.id} item={item} />
                         ))
                     }
                 </div>

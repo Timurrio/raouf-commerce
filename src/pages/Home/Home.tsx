@@ -60,7 +60,7 @@ export const Home: React.FC = () => {
           <div className="home__product-cards">
             {
               items.slice(0, 8).map((item) => (
-                <ProductCard item={item} />
+                <ProductCard key={item.id} item={item} />
               ))
             }
           </div>
