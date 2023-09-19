@@ -8,6 +8,7 @@ import ProductPage from './pages/ProductPage/ProductPage'
 import Cart from './components/Cart/Cart'
 import ScrollToTopWrapper from './components/ScrollToTopWrapper'
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage'
+import { HashRouter } from 'react-router-dom'
 
 
 const App: React.FC = () => {
@@ -15,7 +16,7 @@ const App: React.FC = () => {
 
   return (
     <div className="app">
-      <BrowserRouter>
+      <HashRouter>
         <ScrollToTopWrapper>
           <Navbar />
           <Cart />
@@ -29,7 +30,7 @@ const App: React.FC = () => {
           </div>
           <Footer />
         </ScrollToTopWrapper>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   )
 }
