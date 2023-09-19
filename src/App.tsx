@@ -22,6 +22,7 @@ const App: React.FC = () => {
           <div className="container">
             <Routes>
               <Route index path="/" element={<Home />} />
+              <Route path='/raouf-commerce/' element={<Home />} />
               <Route path="/categories/:category" element={<Categories />} />
               <Route path='/products/:id' element={<ProductPage />} />
               <Route path='*' element={<NotFoundPage />} />
