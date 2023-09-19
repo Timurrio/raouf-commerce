@@ -1,16 +1,20 @@
 import "./Navbar.scss"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import logo from "../../images/logo.png"
 import { useDispatch } from "react-redux"
 import { AppDispatch, RootState } from "../../features/store"
 import { toggleIsActive } from "../../features/cartSlice/cartSlice"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 
 const Navbar: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>()
+    const location = useLocation()
     const [isActive, setIsActive] = useState(false)
     const cartItemsLength = useSelector<RootState, number>((state => state.cart.items.length))
+    useEffect(() => {
+        setIsActive(false)
+    }, [location])
 
     return (
         <nav className="navbar">
