@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.738c3831.css",
-    "main.js": "./static/js/main.cfbe2dd7.js",
+    "main.js": "./static/js/main.4ae5c3a0.js",
     "static/media/bodyoil1.jpg": "./static/media/bodyoil1.df87658baed4f2785f85.jpg",
     "static/media/14.png": "./static/media/14.a674c36b5a4aa0bb7377.png",
     "static/media/9.png": "./static/media/9.c6d969e8587dd1042095.png",
@@ -68,10 +68,10 @@
     "static/media/blackandwhite2.webp": "./static/media/blackandwhite2.1dac1e8c88ee5d5f213b.webp",
     "index.html": "./index.html",
     "main.738c3831.css.map": "./static/css/main.738c3831.css.map",
-    "main.cfbe2dd7.js.map": "./static/js/main.cfbe2dd7.js.map"
+    "main.4ae5c3a0.js.map": "./static/js/main.4ae5c3a0.js.map"
   },
   "entrypoints": [
     "static/css/main.738c3831.css",
-    "static/js/main.cfbe2dd7.js"
+    "static/js/main.4ae5c3a0.js"
   ]
 }
